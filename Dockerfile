@@ -2,6 +2,7 @@ FROM dpatriot/docker-s3-runner:1.4.0
 MAINTAINER Shago Vyacheslav <v.shago@corpwebgames.com>
 
 RUN apt-get -y update && apt-get install -y \
+    python-dev \
     git \
     python-mysql.connector
 
