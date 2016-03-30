@@ -1,0 +1,16 @@
+language: python
+python:
+  - 2.7
+
+services:
+  - docker
+
+install:
+  - docker build -t facebook-libs .
+
+script:
+  - docker run --entrypoint /bin/bash --name facebook-libs facebook-libs -c "pip list"
+
+notifications:
+  slack:
+    secure: AjzpjO7gCb6vdJDNqP6XCCXo7e89lTtC1LqefjY7EVqcbFvzsnYNgVBuf0GEaLjrbp2sQNQxVoiI5PZZs85BS2iw1iDvcQIK+ZuiXlva1A5VnfGHirh+Yyxdbyy8cn6g7/NvmY6xwOYPeoOHZJSWbzvtKJYApISW6rpnBLGsIDX6jz48OZbl3vMkrlUu5IUP47xdo9d5UYhgk4OVYG48F3T+sIJr8uTXagmcl1fkEnAEasfAS/HzKoTz0gpkEm6gFS3MmU2o3ZMc1nIRgnNkUr+DUiBpHgp+qPAkbZ5QlPpCGNqYWhIOcAaOa2NKi6MwLqtJUilEeu7YToCIsnJp37s9m64jK6RcPe+e5dwi3rlVtOthLjZKu32ddWsXpxXpfxMlcSsTPzV3ej5TwHEKlZxei1/ZCEwucuvXTEpHnagDjaUxW30Y+iyqQlEKJAGXlsrakMByuCZOmN6Ju/yBhZl9nURJyBgI00zDZwnenMjXeqZ5sfSL43mFEijVVMl8EoTuezIqraRHAyNytpgya9HYBpGUS87IIRz/JEwmw4UawYnLacnWkaPjKizhKTaIZjhLe0lnV4fp755kSeuDJdoaTKn4dkeU7wfUT70rndYd7BHqhlhdyydJ/E4nFQkkKQLD5OUlSS4H6WKwglozufE5V+3DPPVmOBIy6dVFG54=
