@@ -11,10 +11,13 @@ RUN apt-get -y update && apt-get install -y \
     libldap2-dev \
     libsasl2-dev
 
-RUN pip install 'requests[security]' && \
-    git clone https://github.com/facebook/facebook-python-ads-sdk.git /opt/facebook-python-ads-sdk && \
+RUN pip install \
+    beautifulsoup4 \
+    psycopg2 \
+    'requests[security]'
+
+RUN git clone https://github.com/facebook/facebook-python-ads-sdk.git /opt/facebook-python-ads-sdk && \
     cd /opt/facebook-python-ads-sdk && \
-    python setup.py install && \
-    pip install beautifulsoup4
+    python setup.py install
 
 RUN rm -rf /var/lib/apt/lists/*
