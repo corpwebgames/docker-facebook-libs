@@ -12,6 +12,7 @@ RUN apt-get -y update && apt-get install -y \
     libsasl2-dev
 
 RUN pip install \
+    boto \
     beautifulsoup4 \
     psycopg2 \
     'requests[security]'
